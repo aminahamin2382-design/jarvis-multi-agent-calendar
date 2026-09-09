@@ -12,14 +12,13 @@ In this repository, I am showcasing an advanced multi-agent automation architect
 This architecture divides responsibilities cleanly across two connected workflows:
 
 #### 1. Jarvis Main Router (Master Agent)
-![Jarvis Main Router](Screenshot%202026-08-26%20013255_2.png)
-
+![Jarvis Main Router](main-router.png)
 * **Chat Interface Trigger:** Listens directly to incoming user chat messages, enabling fluid conversational interactions in plain English.
 * **Contextual Memory:** Uses a 'Simple Memory' node to retain conversation history across multiple turns.
 * **Tool Delegation:** The core AI Agent evaluates user intent and triggers a custom tool (`Call 'Jarvis Sub-Agent: Calendar'`) whenever a calendar event or meeting needs to be booked.
 
 #### 2. Calendar Sub-Agent
-![Calendar Sub-Agent](Screenshot%202026-08-30%20152921.png)
+![Calendar Sub-Agent](calendar-agent.png)
 
 * **Sub-Workflow Execution:** Triggered securely via the "When Executed by Another Workflow" node, functioning as an independent micro-service called by the Main Router.
 * **Google Calendar API Integration:** Utilizes an AI Agent powered by an OpenAI Chat Model to parse scheduling details (such as title, start time, and end time) and automatically create the event inside Google Calendar.
